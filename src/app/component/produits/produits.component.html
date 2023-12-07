@@ -1,0 +1,53 @@
+<!-- Utilisation de la grille de Bootstrap pour organiser les produits -->
+<div class="row">
+  <div *ngFor="let produit of produits" class="col-sm-12 col-md-6 col-lg-3 mb-4">
+    <!-- Utilisation des cartes de Bootstrap pour chaque produit -->
+    <div class="card">
+      <img [src]="produit.src" [alt]="produit.nom" class="card-img-top img-fluid">
+      <div class="card-body">
+        <h5 class="card-title">{{ produit.nom }}</h5>
+        <button (click)="afficherDetails(produit)" class="btn btn-primary">Voir les détails</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- On affiche les détails du produit sélectionné  ici-->
+<div *ngIf="produitSelectionne" class="mt-4">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title">Détails du bien</h2>
+      <div class="text-right">
+        <button class="btn btn-secondary mt-2" (click)="fermerDetails()">Fermer les détails</button>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <img [src]="produitSelectionne.src" [alt]="produitSelectionne.nom" class="img-fluid">
+        </div>
+
+        <!-- C'est la colonne pour les détails -->
+        <div class="col-md-6">
+          <table class="table">
+            <tbody>
+            <tr>
+              <td><strong>Référence</strong></td>
+              <td>{{ produitSelectionne.id}}</td>
+            </tr>
+            <tr>
+              <td><strong>Nom</strong></td>
+              <td>{{ produitSelectionne.nom }}</td>
+            </tr>
+            <tr>
+              <td><strong>Description</strong></td>
+              <td>{{ produitSelectionne.description }}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+          <p>Pour plus d'informations sur ce bien, veuillez nous contacter par Email: <strong>contact&#64;bienacquis.fr ou au : 01 20 20 20 20</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+

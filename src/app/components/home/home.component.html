@@ -1,0 +1,13 @@
+<!--<div>
+  <h3>{{ images[currentIndex].titre }}</h3>
+  <img [src]="images[currentIndex].src" [alt]="images[currentIndex].titre">
+
+  <button (click)="previousImage()">Image Précédente</button>
+  <button (click)="nextImage()">Image Suivante</button>
+</div>
+-->
+<div>
+    <h2>{{ titreImg }}</h2>
+    <img [src]="imgUrl" [alt]="titreImg">
+    <button (click)="changeImage()">Changer d'image</button>
+  </div>

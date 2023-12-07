@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Nous contacter</h1>
+  <div>
+    votre nom : {{ afficherName}} <br>
+    votre email : {{ afficherEmail}} <br>
+    votre message : {{ afficherMessage}} <br>
+
+  </div>
+  <form [formGroup]="contactForm" (ngSubmit)="soumettre()">
+    <label for="fname">Nom </label>
+    <input type="text" formControlName="name" id="fname" name="firstname" placeholder="Votre nom et prénom">
+
+    <label for="emailAddress">Email</label>
+    <input id="emailAddress" type="email" formControlName="email" name="email" placeholder="Votre email">
+
+    <label for="sujet">Message</label>
+    <input type="text" formControlName="message" id="sujet" name="sujet"  style="height:300px" placeholder="L'objet de votre message">
+
+
+    <button type="submit" >Soumettre</button>
+  </form>
+</div>
